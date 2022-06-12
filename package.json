@@ -1,0 +1,44 @@
+{
+  "name": "@tsalliance/utilities",
+  "version": "1.18.0",
+  "description": "",
+  "author": "z3ttee",
+  "private": false,
+  "license": "MIT",
+  "main": "dist/utils/index.js",
+  "scripts": {
+    "prebuild": "rimraf dist/utils",
+    "build": "nest build",
+    "build:lib": "npm run prebuild && nest build @tsalliance/utilities",
+    "package:publish": "npm run build:lib && npm version minor --git-tag-version=false && npm publish --access=public",
+    "start:dev": "nest start --watch"
+  },
+  "dependencies": {
+    "@nestjs/common": "^8.4.6",
+    "@nestjs/core": "^8.4.6",
+    "@nestjs/platform-express": "^8.4.6",
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "^7.2.0"
+  },
+  "devDependencies": {
+    "@nestjs/cli": "^8.0.0",
+    "@nestjs/schematics": "^8.0.0",
+    "@types/express": "^4.17.13",
+    "@types/node": "^16.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "@typescript-eslint/parser": "^5.0.0",
+    "eslint": "^8.0.1",
+    "rimraf": "^3.0.2",
+    "source-map-support": "^0.5.20",
+    "ts-loader": "^9.2.3",
+    "ts-node": "^10.0.0",
+    "tsconfig-paths": "4.0.0",
+    "typescript": "^4.3.5"
+  },
+  "files": [
+    "dist/utils/**/*"
+  ],
+  "exports": {
+    ".": "./dist/utils/index.js"
+  }
+}

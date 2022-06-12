@@ -1,0 +1,15 @@
+{
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "src",
+  "projects": {
+    "@tsalliance/utilities": {
+      "type": "library",
+      "root": "libs/@tsalliance/utilities",
+      "entryFile": "index",
+      "sourceRoot": "libs/@tsalliance/utilities/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/@tsalliance/utilities/tsconfig.lib.json"
+      }
+    }
+  }
+}
