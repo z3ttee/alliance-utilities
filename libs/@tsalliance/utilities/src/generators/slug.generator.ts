@@ -12,6 +12,7 @@ export class Slug {
      * @returns string
      */
     public static create(input: string, length = 120): string {
+        if(typeof input === "undefined" || input == null) return input;
         input = Slug.format(input);
 
         if(input.length > length) {
@@ -27,6 +28,7 @@ export class Slug {
      * @returns string
      */
     public static format(input: string): string {
+        if(typeof input === "undefined" || input == null) return input;
         return `${input.toLowerCase().replace(/[^a-zA-Z0-9 ]/g, "").replace(/\s+/g, "-")}`
     }
 
